@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROREBET - Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dashboard {
+            text-align: center;
+            padding: 40px;
+        }
+        .logo {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+        .cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 30px;
+            width: 250px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+        .card-icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .card h2 {
+            color: #1a1a2e;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .card p {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="logo">CROREBET</div>
+        <p class="subtitle">Complaint Management System</p>
+        <div class="cards">
+            <a href="/user/" class="card">
+                <div class="card-icon">📝</div>
+                <h2>User Panel</h2>
+                <p>Submit your complaint here</p>
+            </a>
+            <a href="/admin/" class="card">
+                <div class="card-icon">⚙️</div>
+                <h2>Admin Panel</h2>
+                <p>Manage all complaints</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
