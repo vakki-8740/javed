@@ -1,4 +1,4 @@
-const API_BASE = 'https://javus-backend.onrender.com';
+const API_BASE = 'http://localhost:3000';
 
 const loginPage = document.getElementById('loginPage');
 const dashboard = document.getElementById('dashboard');
