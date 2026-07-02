@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROREBET - Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <div class="login-page" id="loginPage">
+        <div class="login-box">
+            <div class="login-logo">CROREBET</div>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" id="loginUser" placeholder="Enter username" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPass" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn-login">LOGIN</button>
+                <p class="login-error" id="loginError"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD -->
+    <div class="dashboard" id="dashboard" style="display:none;">
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <h1>CROREBET <span>Admin Panel</span></h1>
+            </div>
+            <div class="top-bar-right">
+                <button class="btn-logout" id="logoutBtn">LOGOUT</button>
+            </div>
+        </header>
+
+        <div class="stats-row">
+            <div class="stat-card total">
+                <div class="stat-number" id="totalComplaints">0</div>
+                <div class="stat-label">Total Complaints</div>
+            </div>
+            <div class="stat-card pending">
+                <div class="stat-number" id="pendingComplaints">0</div>
+                <div class="stat-label">Pending</div>
+            </div>
+            <div class="stat-card resolved">
+                <div class="stat-number" id="resolvedComplaints">0</div>
+                <div class="stat-label">Resolved</div>
+            </div>
+        </div>
+
+        <div class="controls-bar">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by email, mobile, problem...">
+            </div>
+            <div class="filter-box">
+                <select id="statusFilter">
+                    <option value="All">All Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+            </div>
+            <button class="btn-refresh" id="refreshBtn">REFRESH</button>
+        </div>
+
+        <div class="table-container">
+            <table class="complaints-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                        <th>Problem</th>
+                        <th>Amount</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="complaintsBody">
+                    <tr><td colspan="9" class="no-data">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- DETAIL MODAL -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-box detail-modal">
+            <button class="modal-close" id="closeDetail">&times;</button>
+            <h2>Complaint Details</h2>
+            <div class="detail-grid" id="detailContent"></div>
+            <div class="modal-actions">
+                <select id="detailStatus">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Resolved">Resolved</option>
+                </select>
+                <button class="btn-save-status" id="saveStatusBtn">Save Status</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMAGE VIEW MODAL -->
+    <div class="modal-overlay" id="imageModal">
+        <div class="modal-box image-modal">
+            <button class="modal-close" id="closeImage">&times;</button>
+            <img id="imagePreview" src="" alt="Preview">
+        </div>
+    </div>
+
+    <!-- CONFIRM DELETE MODAL -->
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal-box confirm-modal">
+            <h3>Delete Complaint?</h3>
+            <p>Ye action undo nahi ho sakta. Kya aap sure hain?</p>
+            <div class="confirm-actions">
+                <button class="btn-cancel" id="cancelDelete">Cancel</button>
+                <button class="btn-delete" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

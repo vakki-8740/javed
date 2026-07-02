@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CROREBET - Complain Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <div class="icon" id="modalIcon">✅</div>
+            <h3 id="modalTitle">Success!</h3>
+            <p id="modalMsg">Your message here.</p>
+            <button class="modal-btn" id="modalBtn">OK</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="logo-area">
+            <img src="images.png" alt="Logo">
+            <h1>CROREBET COMPLAIN PAGE</h1>
+        </div>
+
+        <form id="supportForm">
+            <div class="form-group">
+                <label>Account Email</label>
+                <input type="email" id="email" placeholder="Enter your account email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="tel" id="mobile" placeholder="Enter your mobile number" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <div class="form-group">
+                <label>Select Problem</label>
+                <select id="problem">
+                    <option value="">-- Select --</option>
+                    <option value="deposit">Deposit Problem</option>
+                    <option value="withdrawal">Withdrawal Problem</option>
+                </select>
+            </div>
+
+            <div class="form-group hidden" id="amountGroup">
+                <label id="amountLabel">Enter Deposit Amount</label>
+                <input type="number" id="amount" placeholder="Enter amount">
+            </div>
+
+            <div class="form-group hidden" id="uploadGroup">
+                <label id="uploadLabel">Upload Payment Image</label>
+                <input type="file" id="fileUpload" accept="image/*">
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+                <span class="btn-text">COMPLAIN NOW</span>
+                <span class="btn-text-loading">SUBMITTING...</span>
+                <span class="spinner"></span>
+            </button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
