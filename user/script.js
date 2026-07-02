@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000';
+const API_BASE = 'https://javus-backend.onrender.com';
 
 const modalOverlay = document.getElementById('modalOverlay');
 const modalIcon = document.getElementById('modalIcon');
